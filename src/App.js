@@ -1,10 +1,28 @@
 import './App.css';
+import { BrowserRouter, Switch, Route } from "react-router-dom"
+import { Navbar } from "react-bootstrap"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from "./pages/Home"
+import NotFound from "./pages/NotFound"
 
 function App() {
   return (
-    <div>
-     App
-    </div>
+    <BrowserRouter>
+      <header>
+        <Navbar bg="light">
+          <Navbar.Brand className="h1 mb-0">My Contacts</Navbar.Brand>
+        </Navbar>
+      </header>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route component={NotFound}></Route>
+      </Switch>
+      <footer class="footer">
+        My Contacts - Copyright @2021
+      </footer>
+    </BrowserRouter>
   );
 }
 
