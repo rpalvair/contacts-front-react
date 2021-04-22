@@ -1,15 +1,24 @@
 .card {
     margin-top: 20px;
-  }
+}
 
-  .actions .icon:not(:first-child) {
-    margin-left:10px;
-  }
-  
-  .actions .icon {
+.actions .icon:not(:first-child) {
+    margin-left: 10px;
+}
+
+.actions .icon {
     cursor: pointer;
-  }
+}
 
-  .buttons {
-    margin-top:20px;
-  }  
+.buttons {
+    margin-top: 20px;
+}
+
+.linkIcon {
+    margin-left: 10px;
+    color: black;
+}
+
+.linkIcon:hover {
+    color: black;
+}

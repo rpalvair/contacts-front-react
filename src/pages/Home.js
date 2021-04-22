@@ -6,7 +6,6 @@ import { Card, Col, Container, Row } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import config from "../config"
 import "./Home.css"
-
 class Home extends Component {
 
     state = {
@@ -67,9 +66,10 @@ class Home extends Component {
                                 <Card.Subtitle className="mb-2 text-muted">{contact.age} years old</Card.Subtitle>
                                 <div class="actions">
                                     <FontAwesomeIcon className="icon" icon={faTrash} onClick={() => this.deleteContact(contact)} />
-                                    <FontAwesomeIcon className="icon" icon={faEdit} />
+                                    <Link to={`/edit-contact/${contact.id}`} className="linkIcon">
+                                        <FontAwesomeIcon className="icon" icon={faEdit} />
+                                    </Link>
                                 </div>
-
                             </Card.Body>
                         </Card>
                     )
