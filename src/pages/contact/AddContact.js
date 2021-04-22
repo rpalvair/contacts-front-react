@@ -55,15 +55,13 @@ class AddContact extends Component {
     updateValidity = () => {
         const { firstName, lastName } = this.state
         const age = this.inputAge.current.value
+        let valid = false
         if (firstName !== '' && lastName !== '' && age > 0) {
-            this.setState({
-                isFormValid: true
-            })
-        } else {
-            this.setState({
-                isFormValid: false
-            })
+            valid = true;
         }
+        this.setState({
+            isFormValid: valid
+        })
     }
 
     render() {
