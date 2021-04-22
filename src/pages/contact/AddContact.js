@@ -25,7 +25,7 @@ class AddContact extends Component {
             body: JSON.stringify({
                 firstName: this.state.firstName,
                 lastName: this.state.lastName,
-                age: this.state.age
+                age: this.inputAge.current.value
             })
         }).then(response => {
             console.log("response", response)
