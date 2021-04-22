@@ -19,7 +19,7 @@ function App() {
         </Route>
         <Route component={NotFound}></Route>
       </Switch>
-      <footer class="footer">
+      <footer className="footer">
         My Contacts - Copyright @2021
       </footer>
     </BrowserRouter>
