@@ -4,6 +4,7 @@ import { Navbar } from "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
+import AddContact from './pages/contact/AddContact';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
+        <Route exact path="/add-contact" component={AddContact}></Route>
         <Route component={NotFound}></Route>
       </Switch>
       <footer className="footer">
