@@ -1,11 +1,11 @@
 
-import React, { Component } from "react"
-import config from "../config"
-import { Card, Container, Row, Col } from "react-bootstrap"
-import "./Home.css"
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons'
+import React, { Component } from "react"
+import { Card, Col, Container, Row } from "react-bootstrap"
 import { Link } from "react-router-dom"
+import config from "../config"
+import "./Home.css"
 
 class Home extends Component {
 
@@ -15,6 +15,10 @@ class Home extends Component {
 
     componentDidMount = () => {
         console.log("component is mounted")
+        this.loadContacts()
+    }
+
+    loadContacts = () => {
         fetch(config.endpoints.contacts.read)
             .then(response => {
                 console.log("response", response)
@@ -26,6 +30,22 @@ class Home extends Component {
                         })
                     })
             })
+    }
+
+    deleteContact = (contact) => {
+        console.log("delete contact")
+        fetch(config.endpoints.contacts.delete + "/" + contact.id, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response => {
+            console.log("response", response)
+            if (response.ok) {
+                console.log("Contact deleted")
+                this.loadContacts()
+            }
+        })
     }
 
     render() {
@@ -46,7 +66,7 @@ class Home extends Component {
                                 <Card.Title>{contact.firstName} {contact.lastName}</Card.Title>
                                 <Card.Subtitle className="mb-2 text-muted">{contact.age} years old</Card.Subtitle>
                                 <div class="actions">
-                                    <FontAwesomeIcon className="icon" icon={faTrash} />
+                                    <FontAwesomeIcon className="icon" icon={faTrash} onClick={() => this.deleteContact(contact)} />
                                     <FontAwesomeIcon className="icon" icon={faEdit} />
                                 </div>
 
