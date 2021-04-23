@@ -1,22 +1,17 @@
 import './App.css';
 import { BrowserRouter, Switch, Route } from "react-router-dom"
-import { Navbar } from "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
 import AddContact from './pages/contact/AddContact';
 import EditContact from './pages/contact/EditContact';
-import packageJson from '../package.json';
+import TheHeader from './components/TheHeader';
+import TheFooter from './components/TheFooter';
 
 function App() {
   return (
     <BrowserRouter>
-      <header>
-        <Navbar bg="light">
-          <Navbar.Brand className="h1 mb-0">My Contacts</Navbar.Brand>
-          <span>with React {packageJson.dependencies['react'].substring(1)}</span>
-        </Navbar>
-      </header>
+      <TheHeader></TheHeader>
       <Switch>
         <Route exact path="/">
           <Home />
@@ -25,9 +20,7 @@ function App() {
         <Route exact path="/edit-contact/:id" component={EditContact}></Route>
         <Route component={NotFound}></Route>
       </Switch>
-      <footer className="footer">
-        My Contacts - Copyright @2021
-      </footer>
+      <TheFooter></TheFooter>
     </BrowserRouter>
   );
 }
