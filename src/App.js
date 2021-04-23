@@ -6,7 +6,7 @@ import NotFound from "./pages/NotFound"
 import AddContact from './pages/contact/AddContact';
 import EditContact from './pages/contact/EditContact';
 import TheHeader from './components/TheHeader';
-
+import TheFooter from './components/TheFooter';
 
 function App() {
   return (
@@ -20,9 +20,7 @@ function App() {
         <Route exact path="/edit-contact/:id" component={EditContact}></Route>
         <Route component={NotFound}></Route>
       </Switch>
-      <footer className="footer">
-        My Contacts - Copyright @2021
-      </footer>
+      <TheFooter></TheFooter>
     </BrowserRouter>
   );
 }
