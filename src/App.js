@@ -6,6 +6,7 @@ import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
 import AddContact from './pages/contact/AddContact';
 import EditContact from './pages/contact/EditContact';
+import packageJson from '../package.json';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <header>
         <Navbar bg="light">
           <Navbar.Brand className="h1 mb-0">My Contacts</Navbar.Brand>
+          <span>with React {packageJson.dependencies['react'].substring(1)}</span>
         </Navbar>
       </header>
       <Switch>
