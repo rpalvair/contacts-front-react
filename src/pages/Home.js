@@ -50,7 +50,7 @@ class Home extends Component {
     render() {
         const { contacts } = this.state
         return <Container>
-            <Row className="justify-content-md-center">
+            <Row>
                 <Col lg="3">
                     <div className="buttons">
                         <Link className="btn btn-primary" to="/add-contact">
