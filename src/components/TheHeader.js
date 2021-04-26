@@ -1,5 +1,6 @@
 import packageJson from '../../package.json';
 import { Navbar } from "react-bootstrap"
+import "./TheHeader.css"
 
 const TheHeader = () => (
     <header>
