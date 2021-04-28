@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { Component } from "react"
 import { Card, Col, Container, Row } from "react-bootstrap"
 import { Link } from "react-router-dom"
-import config from "../config"
-import "./Home.css"
-class Home extends Component {
+import config from "../../config"
+import "./ContactsList.css"
+class ContactsList extends Component {
 
     state = {
         contacts: []
@@ -80,4 +80,4 @@ class Home extends Component {
     }
 }
 
-export default Home
+export default ContactsList

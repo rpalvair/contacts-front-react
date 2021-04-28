@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import './App.css';
 import TheHeader from './components/TheHeader';
 import AddContact from './pages/contact/AddContact';
+import ContactsList from './pages/contact/ContactsList';
 import EditContact from './pages/contact/EditContact';
-import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <TheHeader></TheHeader>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <ContactsList />
         </Route>
         <Route exact path="/add-contact" component={AddContact}></Route>
         <Route exact path="/edit-contact/:id" component={EditContact}></Route>
